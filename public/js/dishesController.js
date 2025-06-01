@@ -1,19 +1,26 @@
 document.addEventListener('DOMContentLoaded', () => {
   const modal = document.getElementById('dishModal');
   const openBtn = document.querySelector('.open-modal-btn');
-  const logoutBtn = document.querySelector('.logout-btn');
+  const authBtn = document.querySelector('.auth-btn'); // Renamed from logoutBtn
 
-      modal.style.display = 'none';
+  modal.style.display = 'none';
 
+  // Set auth button label based on login status
+  const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
+  if (authBtn) {
+    authBtn.textContent = isLoggedIn ? 'Logout' : 'Login';
+    authBtn.addEventListener('click', () => {
+      if (isLoggedIn) {
+        localStorage.setItem('isLoggedIn', 'false');
+      }
+      window.location.href = '/login';
+    });
+  }
 
   // Toggle modal on button click
   if (openBtn) {
     openBtn.addEventListener('click', () => {
-      if (modal.style.display === 'block') {
-        modal.style.display = 'none';
-      } else {
-        modal.style.display = 'block';
-      }
+      modal.style.display = modal.style.display === 'block' ? 'none' : 'block';
     });
   }
 
@@ -23,14 +30,6 @@ document.addEventListener('DOMContentLoaded', () => {
       modal.style.display = 'none';
     }
   });
-
-  if (logoutBtn) {
-    logoutBtn.addEventListener('click', () => {
-      // Replace with your actual logout logic
-      alert('Logging out...');
-      window.location.href = '/login'; // Or /auth/logout
-    });
-  }
 
   // Handle form submission
   const dishForm = document.getElementById('addDishForm');

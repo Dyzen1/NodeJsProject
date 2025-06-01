@@ -34,7 +34,7 @@ button {
   border-radius: 4px;
   width: fit-content;
 }
-.logout-btn {
+.auth-btn {
   position: absolute;
   top: 20px;
   right: 20px;

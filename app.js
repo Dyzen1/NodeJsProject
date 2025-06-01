@@ -1,7 +1,9 @@
-// app.js
 const express = require('express');
 const path = require('path');
+const db = require('./utils/dbSingleton'); // 👈 Import the singleton
+
 const app = express();
+// db.getConnection(); // 👈 Initialize MySQL connection once
 
 // Serve static assets (CSS, JS)
 app.use(express.static(path.join(__dirname, 'public')));
