@@ -1,0 +1,20 @@
+.site-header, .site-footer {
+  background-color: #333;
+  color: white;
+  padding: 1rem 0;
+  text-align: center;
+}
+
+.site-header nav a {
+  color: white;
+  margin: 0 1rem;
+  text-decoration: none;
+}
+
+.site-header nav a:hover {
+  text-decoration: underline;
+}
+
+.site-footer {
+  margin-top: 3rem;
+}
