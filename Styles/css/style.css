@@ -34,16 +34,29 @@ button {
   border-radius: 4px;
   width: fit-content;
 }
+
 .auth-btn {
   position: absolute;
   top: 20px;
   right: 20px;
-  background-color: #dc3545;
+  background-color: #007bff;
   color: white;
-  border: none;
-  padding: 0.6rem 1.2rem;
+  padding: 0.6rem 1rem;
   border-radius: 4px;
+  font-weight: bold;
+  border: none;
   cursor: pointer;
+  min-width: 100px;
+}
+
+.auth-btn:hover {
+  background-color: #0056b3;
+}
+
+.message {
+  margin-top: 1rem;
+  font-size: 1rem;
+  font-weight: bold;
 }
 
 button:hover {
