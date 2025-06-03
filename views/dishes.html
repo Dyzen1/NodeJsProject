@@ -1,43 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <title>Dishes</title>
-  <link rel="stylesheet" href="/css/style.css" />
-</head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dishes</title>
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
 
-<body class="container">
+  <body class="container">
+    <header>
+      <h1>Dishes</h1>
+      <nav class="navbar">
+        <ul class="nav-list">
+          <li><a href="/home">Home page</a></li>
+        </ul>
+      </nav>
+    </header>
 
-  <header>
-    <h1>Dishes</h1>
-  </header>
-
-<button class="auth-btn"></button>
-  <main>
-    <section>
-      <h3>Dish List</h3>
-      <ul id="dishList">
-        <!-- JS will populate this -->
-      </ul>
-    </section>
+    <button class="auth-btn">Logout</button>
 
     <!-- Button to open the modal -->
-    <button class="open-modal-btn"> Add New Dish</button>
-  </main>
+    <!-- <button class="open-modal-btn">Add New Dish</button> -->
 
-  <!-- Modal structure -->
-  <div class="modal" id="dishModal">
-    <div class="modal-content">
-      <h3>Add New Dish</h3>
-      <form id="addDishForm">
-        <input type="text" id="dishName" placeholder="Dish Name" required />
-        <input type="number" id="dishPrice" placeholder="Price" required />
-        <textarea id="dishDescription" placeholder="Description"></textarea>
-        <button type="submit">Add Dish</button>
-      </form>
+    <!-- Modal structure -->
+    <div class="modal" id="dishModal">
+      <div class="modal-content">
+        <div class="form-toggle">
+          <label
+            ><input type="radio" name="formType" value="add" checked /> Add
+            Dish</label
+          >
+          <label
+            ><input type="radio" name="formType" value="update" /> Update
+            Dish</label
+          >
+        </div>
+
+        <form id="addDishForm">
+          <h2>Add New Dish</h2>
+          <input
+            type="text"
+            id="dish_id"
+            placeholder="Serial Number"
+            required
+          />
+          <input type="text" id="dish_name" placeholder="Dish Name" required />
+          <input type="number" id="price" placeholder="Price" required />
+          <textarea id="made_of" placeholder="Ingredients"></textarea>
+          <button type="submit">Add Dish</button>
+        </form>
+        <form id="updateDishForm" style="display: none">
+          <h3>Update Existing Dish</h3>
+          <input
+            type="text"
+            id="update_id"
+            placeholder="Dish ID to Update"
+            required
+          />
+          <input
+            type="text"
+            id="update_name"
+            placeholder="New Dish Name"
+            required
+          />
+          <input
+            type="number"
+            id="update_price"
+            placeholder="New Price"
+            required
+          />
+          <textarea
+            id="update_made_of"
+            placeholder="New Ingredients"
+          ></textarea>
+          <button type="submit">Update Dish</button>
+        </form>
+      </div>
     </div>
-  </div>
 
-  <script src="/js/dishesController.js"></script>
-</body>
+    <section>
+      <h4>Dish List</h4>
+      <ul id="dishList"></ul>
+    </section>
+
+    <script src="/js/dishesController.js"></script>
+  </body>
 </html>
