@@ -16,9 +16,10 @@
     "url": "https://github.com/Dyzen1/NodeJsProject/issues"
   },
   "homepage": "https://github.com/Dyzen1/NodeJsProject#readme",
-  "description": "",
   "dependencies": {
+    "bcrypt": "^6.0.0",
     "express": "^5.1.0",
     "mysql2": "^3.14.1"
-  }
+  },
+  "description": ""
 }

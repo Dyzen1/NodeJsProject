@@ -6,7 +6,7 @@ const db = singleton.getConnection();
 
 router.use(express.json());
 
-// ✅ Create user with hashed password
+// Create user with hashed password
 router.post('/users', (req, res) => {
   const { name, password } = req.body;
 
