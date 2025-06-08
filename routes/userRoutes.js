@@ -31,7 +31,7 @@ router.post('/users', (req, res) => {
   });
 });
 
-// ✅ Read all users
+// Read all users
 router.get('/', (req, res) => {
   db.query('SELECT id, name FROM users', (err, results) => {
     if (err) return res.status(500).json({ message: 'DB error', error: err });
@@ -39,7 +39,7 @@ router.get('/', (req, res) => {
   });
 });
 
-// ✅ Read one user by ID
+// Read one user by ID
 router.get('/:id', (req, res) => {
   db.query('SELECT id, name FROM users WHERE id = ?', [req.params.id], (err, results) => {
     if (err) return res.status(500).json({ message: 'DB error', error: err });
@@ -48,7 +48,7 @@ router.get('/:id', (req, res) => {
   });
 });
 
-// ✅ Login (name + password)
+// Login (name + password)
 router.post('/login', (req, res) => {
   const { name, password } = req.body;
 
@@ -82,7 +82,7 @@ router.post('/login', (req, res) => {
   });
 
 
-  
+
 });
 
 module.exports = router;
