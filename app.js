@@ -3,7 +3,7 @@ const path = require("path");
 const app = express();
 
 // Routers
-const dishesRouter = require("./routes/dishesRouter");
+const dishesRoutes = require("./routes/dishesRoutes");
 const userRoutes = require("./routes/userRoutes");
 
 const PORT = 3001;
@@ -13,7 +13,7 @@ app.use(express.json());
 app.use(express.static(path.join(__dirname, "public")));
 
 // API routes
-app.use("/api/dishes", dishesRouter);
+app.use("/api/dishes", dishesRoutes);
 app.use("/api", userRoutes); // includes /api/login and /api/users
 
 // HTML views

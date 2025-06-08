@@ -5,11 +5,27 @@
   box-sizing: border-box;
 }
 
+/* Layout & Typography */
+body {
+  font-family: "Segoe UI", sans-serif;
+  background: #e8f0fe;
+  color: #333;
+  padding: 2rem;
+}
+
+.container {
+  max-width: 600px;
+  margin: auto;
+}
+
+/* Header */
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding-bottom: 40px;
+  margin-bottom: 2rem;
+  border-bottom: 2px solid #ccc;
 }
 
 /* Navbar Styling */
@@ -39,45 +55,7 @@ header {
   color: #fff;
 }
 
-body {
-  font-family: "Segoe UI", sans-serif;
-  background: #f4f4f4;
-  margin: 0;
-  padding: 2rem;
-  color: #333;
-}
-
-.container {
-  max-width: 600px;
-  margin: auto;
-}
-
-.form-box {
-  background: white;
-  padding: 2rem;
-  border-radius: 8px;
-  box-shadow: 0 0 10px #ccc;
-}
-
-input,
-textarea,
-button {
-  display: block;
-  width: 100%;
-  margin: 0.5rem 0;
-  padding: 0.6rem;
-  font-size: 1rem;
-}
-
-button {
-  background-color: #007bff;
-  color: white;
-  border: none;
-  cursor: pointer;
-  border-radius: 4px;
-  width: fit-content;
-}
-
+/* Auth Button */
 .auth-btn {
   position: absolute;
   top: 20px;
@@ -96,16 +74,146 @@ button {
   background-color: #0056b3;
 }
 
-.message {
-  margin-top: 1rem;
+/* Buttons General */
+button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  padding: 0.6rem 1rem;
   font-size: 1rem;
-  font-weight: bold;
+  margin-top: 0.5rem;
 }
 
 button:hover {
   background-color: #0056b3;
 }
 
+/* Inputs & Textareas */
+input,
+textarea {
+  display: block;
+  width: 100%;
+  margin: 0.5rem 0;
+  padding: 0.6rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Modal Overlay */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  overflow: auto;
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #fff;
+  margin: 5% auto;
+  padding: 2rem;
+  border-radius: 8px;
+  max-width: 500px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  position: relative;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Modal Close Button */
+.modal-content .close {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  cursor: pointer;
+}
+
+/* Animate Modal Appearance */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Forms Inside Modal */
+.modal-content form button {
+  width: fit-content;
+  font-weight: bold;
+}
+
+/* Dish List Section */
+section {
+  margin-top: 2rem;
+}
+
+#dishList {
+  list-style-type: none;
+  padding-left: 0;
+  margin-top: 1.5rem;
+}
+
+#dishList li {
+  background-color: #ffffff;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.06);
+  transition: transform 0.2s ease-in-out;
+}
+
+#dishList li:hover {
+  transform: translateY(-3px);
+  background-color: #f0f8ff;
+}
+
+/* Button Group Inside Dish List */
+#dishList button {
+  display: inline-block;
+  margin: 0.3rem 0.5rem 0 0;
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Delete Button */
+#dishList button:nth-child(2) {
+  background-color: #dc3545;
+  color: white;
+}
+
+#dishList button:nth-child(2):hover {
+  background-color: #b02a37;
+}
+
+/* Update Button */
+#dishList button:nth-child(3) {
+  background-color: #ffc107;
+  color: #333;
+}
+
+#dishList button:nth-child(3):hover {
+  background-color: #e0a800;
+}
+
+/* Table Styling (if needed) */
 table {
   width: 100%;
   border-collapse: collapse;
@@ -117,9 +225,4 @@ td {
   border: 1px solid #ddd;
   padding: 0.75rem;
   text-align: left;
-}
-
-#dishList {
-  list-style-type: disc;
-  padding-left: 20px;
 }

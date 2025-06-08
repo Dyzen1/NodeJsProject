@@ -8,7 +8,7 @@ const dbSingleton = {
     if (!connection) {
       // Create a connection only once
       connection = mysql.createConnection({
-        host: "localhost",
+        host: "172.16.101.1",
         user: "root",
         password: "",
         database: "rest_node",

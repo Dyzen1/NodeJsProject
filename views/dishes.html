@@ -20,37 +20,22 @@
     <button class="auth-btn">Logout</button>
 
     <!-- Button to open the modal -->
-    <!-- <button class="open-modal-btn">Add New Dish</button> -->
+    <button class="open-modal-btn">Add New Dish</button>
 
     <!-- Modal structure -->
     <div class="modal" id="dishModal">
       <div class="modal-content">
-        <div class="form-toggle">
-          <label
-            ><input type="radio" name="formType" value="add" checked /> Add
-            Dish</label
-          >
-          <label
-            ><input type="radio" name="formType" value="update" /> Update
-            Dish</label
-          >
-        </div>
-
         <form id="addDishForm">
           <h2>Add New Dish</h2>
-          <input
-            type="text"
-            id="dish_id"
-            placeholder="Serial Number"
-            required
-          />
+          <input type="text" id="dish_id" placeholder="Dish ID" required />
           <input type="text" id="dish_name" placeholder="Dish Name" required />
           <input type="number" id="price" placeholder="Price" required />
           <textarea id="made_of" placeholder="Ingredients"></textarea>
-          <button type="submit">Add Dish</button>
+          <button type="submit">Save</button>
         </form>
-        <form id="updateDishForm" style="display: none">
-          <h3>Update Existing Dish</h3>
+
+        <span class="close">&times;</span>
+        <form id="updateDishForm">
           <input
             type="text"
             id="update_id"
@@ -73,7 +58,7 @@
             id="update_made_of"
             placeholder="New Ingredients"
           ></textarea>
-          <button type="submit">Update Dish</button>
+          <button type="submit">Save</button>
         </form>
       </div>
     </div>

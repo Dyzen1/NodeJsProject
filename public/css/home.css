@@ -5,6 +5,10 @@
   text-align: center;
 }
 
+body{
+  background: #e8f0fe;
+}
+
 .site-header nav a {
   color: white;
   margin: 0 1rem;
