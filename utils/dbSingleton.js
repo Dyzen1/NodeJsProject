@@ -7,12 +7,14 @@ const dbSingleton = {
   getConnection: () => {
     if (!connection) {
       // Create a connection only once
-      connection = mysql.createConnection({
-        host: "172.16.101.1",
+     connection = mysql.createConnection({
+        host: "localhost", // ← replace with her real IP
         user: "root",
         password: "",
         database: "rest_node",
-      });
+        port: 3307
+});
+
 
       connection.connect((err) => {
         if (err) {
@@ -31,7 +33,7 @@ const dbSingleton = {
       });
     }
 
-    return connection; // Return the current connection
+    return connection; 
   },
 };
 

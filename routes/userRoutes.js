@@ -65,9 +65,24 @@ router.post('/login', (req, res) => {
       if (err) return res.status(500).send('Error comparing passwords');
       if (!isMatch) return res.status(401).send('Invalid password');
 
+      req.session.user = {
+        id: user.id,
+        name: user.name
+      };
+
       res.json({ message: 'Login successful', user: { id: user.id, name: user.name } });
     });
   });
+
+  router.post('/logout', (req, res) => {
+    req.session.destroy((err) => {
+      if (err) return res.status(500).send('Error logging out');
+      res.json({ message: 'Logout successful' });
+    });
+  });
+
+
+  
 });
 
 module.exports = router;
