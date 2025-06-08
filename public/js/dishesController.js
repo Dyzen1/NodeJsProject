@@ -1,16 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // ========== AUTH BUTTON ==========
-  const authBtn = document.querySelector(".auth-btn");
-  const isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
-  if (authBtn) {
-    authBtn.textContent = isLoggedIn ? "Logout" : "Login";
-    authBtn.addEventListener("click", () => {
-      if (isLoggedIn) {
-        localStorage.setItem("isLoggedIn", "false");
-      }
-      window.location.href = "/login";
-    });
-  }
+
 
   // ========== MODAL SETUP ==========
   const modal = document.getElementById("dishModal");

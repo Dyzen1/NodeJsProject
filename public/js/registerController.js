@@ -4,18 +4,28 @@ document.addEventListener("DOMContentLoaded", () => {
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
 
-    const name = document.getElementById("name").value;
+    const username = document.getElementById("username").value;
+    const email = document.getElementById("email").value;
     const password = document.getElementById("password").value;
 
-    const res = await fetch("/api/users", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ name, password }),
-    });
+    try {
+      const res = await fetch("/api/users", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ username, email, password }),
+      });
 
-    await res.text();
-    if (res.ok) {
-      window.location.href = "/";
+      const text = await res.text();
+      console.log("Response:", res.status, text);
+
+      if (res.ok) {
+        alert("Registered successfully!");
+        window.location.href = "/";
+      } else {
+        alert("Registration failed: " + text);
+      }
+    } catch (err) {
+      console.error("Network error:", err);
     }
   });
 });

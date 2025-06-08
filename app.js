@@ -25,7 +25,7 @@ app.use(express.json());
 app.use(express.static(path.join(__dirname, "public")));
 
 // API routes
-app.use("/api/dishes", dishesRouter, isAuthenticated); 
+app.use("/api/dishes", isAuthenticated, dishesRoutes);
 app.use("/api", userRoutes); // includes /api/login and /api/users
 
 //  protected HTML views

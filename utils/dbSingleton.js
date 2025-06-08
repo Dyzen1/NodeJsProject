@@ -8,11 +8,11 @@ const dbSingleton = {
     if (!connection) {
       // Create a connection only once
      connection = mysql.createConnection({
-        host: "localhost", // ← replace with her real IP
+        host: "localhost", 
         user: "root",
         password: "",
         database: "rest_node",
-        port: 3307
+       
 });
 
 
